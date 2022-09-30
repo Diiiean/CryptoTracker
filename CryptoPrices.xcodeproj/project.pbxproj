@@ -10,9 +10,33 @@
 		0499279B28C08FBE002EC5F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0499279A28C08FBE002EC5F0 /* AppDelegate.swift */; };
 		0499279D28C08FBE002EC5F0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0499279C28C08FBE002EC5F0 /* SceneDelegate.swift */; };
 		0499279F28C08FBE002EC5F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0499279E28C08FBE002EC5F0 /* ViewController.swift */; };
-		049927A228C08FBE002EC5F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 049927A028C08FBE002EC5F0 /* Main.storyboard */; };
-		049927A428C08FBF002EC5F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 049927A328C08FBF002EC5F0 /* Assets.xcassets */; };
 		049927A728C08FBF002EC5F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 049927A528C08FBF002EC5F0 /* LaunchScreen.storyboard */; };
+		049927AF28C1F8BE002EC5F0 /* ColumnHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049927AE28C1F8BE002EC5F0 /* ColumnHeaderCell.swift */; };
+		049927B128C2684D002EC5F0 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049927B028C2684D002EC5F0 /* APICaller.swift */; };
+		049927D328C3AC22002EC5F0 /* CoinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049927D228C3AC22002EC5F0 /* CoinModel.swift */; };
+		049927D728C3E93E002EC5F0 /* CryptoNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049927D628C3E93E002EC5F0 /* CryptoNameCell.swift */; };
+		049927D928C3EC0E002EC5F0 /* CryptoPriceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049927D828C3EC0E002EC5F0 /* CryptoPriceCell.swift */; };
+		049927DB28C3EC9A002EC5F0 /* MarketCapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049927DA28C3EC9A002EC5F0 /* MarketCapCell.swift */; };
+		049927DF28C6432F002EC5F0 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049927DE28C6432F002EC5F0 /* UIImageView.swift */; };
+		049927E428C871A0002EC5F0 /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049927E328C871A0002EC5F0 /* CellViewModel.swift */; };
+		049927E828C8A5E4002EC5F0 /* OneDayPriceChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049927E728C8A5E4002EC5F0 /* OneDayPriceChange.swift */; };
+		049927EA28CA86E6002EC5F0 /* VolumeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049927E928CA86E6002EC5F0 /* VolumeCell.swift */; };
+		049927EC28CA8713002EC5F0 /* CirculatingSupplyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049927EB28CA8713002EC5F0 /* CirculatingSupplyCell.swift */; };
+		049927EE28CA8BA5002EC5F0 /* SevenDayPriceChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049927ED28CA8BA5002EC5F0 /* SevenDayPriceChange.swift */; };
+		04C7738528CC4B8500EB9AB7 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C7738428CC4B8500EB9AB7 /* UILabel.swift */; };
+		04C7738728CC4BF300EB9AB7 /* Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C7738628CC4BF300EB9AB7 /* Float.swift */; };
+		04C7738928CC510500EB9AB7 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C7738828CC510500EB9AB7 /* Double.swift */; };
+		04C7738C28CD392E00EB9AB7 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C7738B28CD392E00EB9AB7 /* ChartView.swift */; };
+		04C7738E28CD39DA00EB9AB7 /* ChartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C7738D28CD39DA00EB9AB7 /* ChartModel.swift */; };
+		04C7739028CDEE8D00EB9AB7 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C7738F28CDEE8D00EB9AB7 /* String.swift */; };
+		04C7739628D3BE9B00EB9AB7 /* ChartViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C7739528D3BE9B00EB9AB7 /* ChartViewCell.swift */; };
+		04C7739C28D4998D00EB9AB7 /* ChartAPICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C7739B28D4998D00EB9AB7 /* ChartAPICaller.swift */; };
+		04C773A028D6024100EB9AB7 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C7739F28D6024100EB9AB7 /* PreviewProvider.swift */; };
+		04C773D528E43DEA00EB9AB7 /* ATHChangesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C773D428E43DEA00EB9AB7 /* ATHChangesCell.swift */; };
+		04C773D728E43FA300EB9AB7 /* ATHModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C773D628E43FA300EB9AB7 /* ATHModel.swift */; };
+		04C773D928E5827200EB9AB7 /* FavoritesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C773D828E5827200EB9AB7 /* FavoritesCell.swift */; };
+		04C773DB28E6147700EB9AB7 /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C773DA28E6147700EB9AB7 /* UIStackView.swift */; };
+		B6C1599C157C7B4351FD9BB6 /* Pods_CryptoPrices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6E72502D5EA48E295E3CEBC /* Pods_CryptoPrices.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,10 +44,36 @@
 		0499279A28C08FBE002EC5F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0499279C28C08FBE002EC5F0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0499279E28C08FBE002EC5F0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		049927A128C08FBE002EC5F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		049927A328C08FBF002EC5F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		049927A628C08FBF002EC5F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		049927A828C08FBF002EC5F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		049927AE28C1F8BE002EC5F0 /* ColumnHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnHeaderCell.swift; sourceTree = "<group>"; };
+		049927B028C2684D002EC5F0 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
+		049927D228C3AC22002EC5F0 /* CoinModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinModel.swift; sourceTree = "<group>"; };
+		049927D628C3E93E002EC5F0 /* CryptoNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoNameCell.swift; sourceTree = "<group>"; };
+		049927D828C3EC0E002EC5F0 /* CryptoPriceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoPriceCell.swift; sourceTree = "<group>"; };
+		049927DA28C3EC9A002EC5F0 /* MarketCapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketCapCell.swift; sourceTree = "<group>"; };
+		049927DE28C6432F002EC5F0 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		049927E328C871A0002EC5F0 /* CellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewModel.swift; sourceTree = "<group>"; };
+		049927E728C8A5E4002EC5F0 /* OneDayPriceChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneDayPriceChange.swift; sourceTree = "<group>"; };
+		049927E928CA86E6002EC5F0 /* VolumeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeCell.swift; sourceTree = "<group>"; };
+		049927EB28CA8713002EC5F0 /* CirculatingSupplyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirculatingSupplyCell.swift; sourceTree = "<group>"; };
+		049927ED28CA8BA5002EC5F0 /* SevenDayPriceChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SevenDayPriceChange.swift; sourceTree = "<group>"; };
+		04C7738428CC4B8500EB9AB7 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		04C7738628CC4BF300EB9AB7 /* Float.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Float.swift; sourceTree = "<group>"; };
+		04C7738828CC510500EB9AB7 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		04C7738B28CD392E00EB9AB7 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		04C7738D28CD39DA00EB9AB7 /* ChartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartModel.swift; sourceTree = "<group>"; };
+		04C7738F28CDEE8D00EB9AB7 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		04C7739528D3BE9B00EB9AB7 /* ChartViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewCell.swift; sourceTree = "<group>"; };
+		04C7739B28D4998D00EB9AB7 /* ChartAPICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartAPICaller.swift; sourceTree = "<group>"; };
+		04C7739F28D6024100EB9AB7 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
+		04C773D428E43DEA00EB9AB7 /* ATHChangesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATHChangesCell.swift; sourceTree = "<group>"; };
+		04C773D628E43FA300EB9AB7 /* ATHModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATHModel.swift; sourceTree = "<group>"; };
+		04C773D828E5827200EB9AB7 /* FavoritesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCell.swift; sourceTree = "<group>"; };
+		04C773DA28E6147700EB9AB7 /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
+		4789EF09EB562FC1BA105533 /* Pods-CryptoPrices.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoPrices.debug.xcconfig"; path = "Target Support Files/Pods-CryptoPrices/Pods-CryptoPrices.debug.xcconfig"; sourceTree = "<group>"; };
+		D6E72502D5EA48E295E3CEBC /* Pods_CryptoPrices.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoPrices.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D788B967513F64FA46D79AA1 /* Pods-CryptoPrices.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoPrices.release.xcconfig"; path = "Target Support Files/Pods-CryptoPrices/Pods-CryptoPrices.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6C1599C157C7B4351FD9BB6 /* Pods_CryptoPrices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +93,8 @@
 			children = (
 				0499279928C08FBE002EC5F0 /* CryptoPrices */,
 				0499279828C08FBE002EC5F0 /* Products */,
+				9CB378944ADAC2E99E9D1AD4 /* Pods */,
+				30D487FDA34DDC17FF57829E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,12 +112,92 @@
 				0499279A28C08FBE002EC5F0 /* AppDelegate.swift */,
 				0499279C28C08FBE002EC5F0 /* SceneDelegate.swift */,
 				0499279E28C08FBE002EC5F0 /* ViewController.swift */,
-				049927A028C08FBE002EC5F0 /* Main.storyboard */,
-				049927A328C08FBF002EC5F0 /* Assets.xcassets */,
+				04C7738A28CD390B00EB9AB7 /* Views */,
+				049927E028C87129002EC5F0 /* ViewModels */,
+				049927E628C896C3002EC5F0 /* API */,
+				049927E528C88ACA002EC5F0 /* Cells */,
+				04C7738328CC4B3A00EB9AB7 /* Extensions */,
 				049927A528C08FBF002EC5F0 /* LaunchScreen.storyboard */,
 				049927A828C08FBF002EC5F0 /* Info.plist */,
 			);
 			path = CryptoPrices;
+			sourceTree = "<group>";
+		};
+		049927E028C87129002EC5F0 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				049927D228C3AC22002EC5F0 /* CoinModel.swift */,
+				049927E328C871A0002EC5F0 /* CellViewModel.swift */,
+				04C7738D28CD39DA00EB9AB7 /* ChartModel.swift */,
+				04C773D628E43FA300EB9AB7 /* ATHModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		049927E528C88ACA002EC5F0 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				049927AE28C1F8BE002EC5F0 /* ColumnHeaderCell.swift */,
+				049927DA28C3EC9A002EC5F0 /* MarketCapCell.swift */,
+				049927D628C3E93E002EC5F0 /* CryptoNameCell.swift */,
+				04C7739528D3BE9B00EB9AB7 /* ChartViewCell.swift */,
+				04C773D428E43DEA00EB9AB7 /* ATHChangesCell.swift */,
+				049927E928CA86E6002EC5F0 /* VolumeCell.swift */,
+				049927ED28CA8BA5002EC5F0 /* SevenDayPriceChange.swift */,
+				049927E728C8A5E4002EC5F0 /* OneDayPriceChange.swift */,
+				049927EB28CA8713002EC5F0 /* CirculatingSupplyCell.swift */,
+				049927D828C3EC0E002EC5F0 /* CryptoPriceCell.swift */,
+				04C773D828E5827200EB9AB7 /* FavoritesCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		049927E628C896C3002EC5F0 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				049927B028C2684D002EC5F0 /* APICaller.swift */,
+				04C7739B28D4998D00EB9AB7 /* ChartAPICaller.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		04C7738328CC4B3A00EB9AB7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				04C7738828CC510500EB9AB7 /* Double.swift */,
+				04C773DA28E6147700EB9AB7 /* UIStackView.swift */,
+				04C7738628CC4BF300EB9AB7 /* Float.swift */,
+				049927DE28C6432F002EC5F0 /* UIImageView.swift */,
+				04C7738428CC4B8500EB9AB7 /* UILabel.swift */,
+				04C7738F28CDEE8D00EB9AB7 /* String.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		04C7738A28CD390B00EB9AB7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				04C7738B28CD392E00EB9AB7 /* ChartView.swift */,
+				04C7739F28D6024100EB9AB7 /* PreviewProvider.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		30D487FDA34DDC17FF57829E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D6E72502D5EA48E295E3CEBC /* Pods_CryptoPrices.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9CB378944ADAC2E99E9D1AD4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4789EF09EB562FC1BA105533 /* Pods-CryptoPrices.debug.xcconfig */,
+				D788B967513F64FA46D79AA1 /* Pods-CryptoPrices.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +207,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 049927AB28C08FBF002EC5F0 /* Build configuration list for PBXNativeTarget "CryptoPrices" */;
 			buildPhases = (
+				6661A94593E343B6FE27389F /* [CP] Check Pods Manifest.lock */,
 				0499279328C08FBE002EC5F0 /* Sources */,
 				0499279428C08FBE002EC5F0 /* Frameworks */,
 				0499279528C08FBE002EC5F0 /* Resources */,
+				A57485207C8BFED87AFA4F05 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,12 +261,52 @@
 			buildActionMask = 2147483647;
 			files = (
 				049927A728C08FBF002EC5F0 /* LaunchScreen.storyboard in Resources */,
-				049927A428C08FBF002EC5F0 /* Assets.xcassets in Resources */,
-				049927A228C08FBE002EC5F0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6661A94593E343B6FE27389F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CryptoPrices-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A57485207C8BFED87AFA4F05 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CryptoPrices/Pods-CryptoPrices-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CryptoPrices/Pods-CryptoPrices-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CryptoPrices/Pods-CryptoPrices-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0499279328C08FBE002EC5F0 /* Sources */ = {
@@ -139,22 +314,39 @@
 			buildActionMask = 2147483647;
 			files = (
 				0499279F28C08FBE002EC5F0 /* ViewController.swift in Sources */,
+				049927EA28CA86E6002EC5F0 /* VolumeCell.swift in Sources */,
+				04C773D528E43DEA00EB9AB7 /* ATHChangesCell.swift in Sources */,
+				049927D728C3E93E002EC5F0 /* CryptoNameCell.swift in Sources */,
+				049927E428C871A0002EC5F0 /* CellViewModel.swift in Sources */,
+				04C773D928E5827200EB9AB7 /* FavoritesCell.swift in Sources */,
+				04C773A028D6024100EB9AB7 /* PreviewProvider.swift in Sources */,
 				0499279B28C08FBE002EC5F0 /* AppDelegate.swift in Sources */,
+				04C7739C28D4998D00EB9AB7 /* ChartAPICaller.swift in Sources */,
+				049927AF28C1F8BE002EC5F0 /* ColumnHeaderCell.swift in Sources */,
+				04C7739628D3BE9B00EB9AB7 /* ChartViewCell.swift in Sources */,
+				04C7738528CC4B8500EB9AB7 /* UILabel.swift in Sources */,
+				049927EC28CA8713002EC5F0 /* CirculatingSupplyCell.swift in Sources */,
+				049927D928C3EC0E002EC5F0 /* CryptoPriceCell.swift in Sources */,
+				04C773D728E43FA300EB9AB7 /* ATHModel.swift in Sources */,
+				049927DF28C6432F002EC5F0 /* UIImageView.swift in Sources */,
+				04C7738C28CD392E00EB9AB7 /* ChartView.swift in Sources */,
+				049927DB28C3EC9A002EC5F0 /* MarketCapCell.swift in Sources */,
+				04C7738728CC4BF300EB9AB7 /* Float.swift in Sources */,
+				049927D328C3AC22002EC5F0 /* CoinModel.swift in Sources */,
+				04C7738E28CD39DA00EB9AB7 /* ChartModel.swift in Sources */,
+				049927EE28CA8BA5002EC5F0 /* SevenDayPriceChange.swift in Sources */,
+				049927B128C2684D002EC5F0 /* APICaller.swift in Sources */,
+				04C773DB28E6147700EB9AB7 /* UIStackView.swift in Sources */,
 				0499279D28C08FBE002EC5F0 /* SceneDelegate.swift in Sources */,
+				04C7739028CDEE8D00EB9AB7 /* String.swift in Sources */,
+				04C7738928CC510500EB9AB7 /* Double.swift in Sources */,
+				049927E828C8A5E4002EC5F0 /* OneDayPriceChange.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		049927A028C08FBE002EC5F0 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				049927A128C08FBE002EC5F0 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		049927A528C08FBF002EC5F0 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -282,6 +474,7 @@
 		};
 		049927AC28C08FBF002EC5F0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4789EF09EB562FC1BA105533 /* Pods-CryptoPrices.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -292,7 +485,6 @@
 				INFOPLIST_FILE = CryptoPrices/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -310,6 +502,7 @@
 		};
 		049927AD28C08FBF002EC5F0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D788B967513F64FA46D79AA1 /* Pods-CryptoPrices.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -320,7 +513,6 @@
 				INFOPLIST_FILE = CryptoPrices/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
