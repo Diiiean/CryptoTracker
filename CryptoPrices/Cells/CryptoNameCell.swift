@@ -14,10 +14,10 @@ import UIKit
 final class CryptoNameCell: Cell {
     
     static let identifier = "CryptoNameCell"
-    
+    let placeHolderImage = UIImage(named: "placeHolderImage")
     private let iconImageView: UIImageView = {
         let imageView = UIImageView()
-//        let image = UIImage(systemName: "placeHolderImage")
+        
 //        imageView.image = image
 //        imageView.backgroundColor = .green
         imageView.contentMode = .scaleAspectFit //scaleToFill //
@@ -30,9 +30,9 @@ final class CryptoNameCell: Cell {
         label.contentMode = .scaleToFill
         label.sizeToFit()
         label.adjustsFontSizeToFitWidth = true
-        label.setContentHuggingPriority(.defaultLow - 1, for: .vertical)
-        label.setContentHuggingPriority(.defaultLow - 1, for: .horizontal)
-        label.font = UIFont.boldSystemFont(ofSize: 13)
+//        label.setContentHuggingPriority(.defaultLow - 1, for: .vertical)
+//        label.setContentHuggingPriority(.defaultLow - 1, for: .horizontal)
+        label.font = UIFont.boldSystemFont(ofSize: 16)
         label.textAlignment = .left
         return label
     }()
@@ -53,7 +53,8 @@ final class CryptoNameCell: Cell {
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .vertical
         stack.alignment = .leading
-        stack.spacing = 3
+        stack.spacing = 0
+        stack.distribution = .fillProportionally
         stack.clipsToBounds = true
         stack.addArrangedSubview(cryptoNameLabel)
         stack.addArrangedSubview(symbolLabel)
@@ -81,9 +82,9 @@ final class CryptoNameCell: Cell {
                                          leading: iconImageView.trailingAnchor,
                          bottom: contentView.bottomAnchor,
                                          trailing: contentView.trailingAnchor,
-                         padding: .init(top: 5,
+                         padding: .init(top: 2,
                                         left: 0,
-                                        bottom: -10,
+                                        bottom: -2,
                                         right: -2)
                   )
     }
@@ -100,9 +101,10 @@ final class CryptoNameCell: Cell {
         cryptoNameLabel.text = viewModel.name
         symbolLabel.text = viewModel.symbol
 
-        if let url = viewModel.iconURL {
-            iconImageView.sd_setImage(with: url, placeholderImage: nil, options: [.refreshCached], completed: { [weak self] downloadedImage, downloadException, cacheType, downloadURL in
+        if let url = URL(string: viewModel.icon) {
+            iconImageView.sd_setImage(with: url, placeholderImage: placeHolderImage, options: [.refreshCached], completed: { [weak self] downloadedImage, downloadException, cacheType, downloadURL in
                 if let downloadException = downloadException {
+                    
                     print("Error downloading iconImage: \(downloadException.localizedDescription)")
                 }
                 else {

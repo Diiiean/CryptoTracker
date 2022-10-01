@@ -36,6 +36,7 @@
 		04C773D728E43FA300EB9AB7 /* ATHModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C773D628E43FA300EB9AB7 /* ATHModel.swift */; };
 		04C773D928E5827200EB9AB7 /* FavoritesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C773D828E5827200EB9AB7 /* FavoritesCell.swift */; };
 		04C773DB28E6147700EB9AB7 /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C773DA28E6147700EB9AB7 /* UIStackView.swift */; };
+		04C773DD28E81F6C00EB9AB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04C773DC28E81F6B00EB9AB7 /* Assets.xcassets */; };
 		B6C1599C157C7B4351FD9BB6 /* Pods_CryptoPrices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6E72502D5EA48E295E3CEBC /* Pods_CryptoPrices.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 		04C773D628E43FA300EB9AB7 /* ATHModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATHModel.swift; sourceTree = "<group>"; };
 		04C773D828E5827200EB9AB7 /* FavoritesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCell.swift; sourceTree = "<group>"; };
 		04C773DA28E6147700EB9AB7 /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
+		04C773DC28E81F6B00EB9AB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
 		4789EF09EB562FC1BA105533 /* Pods-CryptoPrices.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoPrices.debug.xcconfig"; path = "Target Support Files/Pods-CryptoPrices/Pods-CryptoPrices.debug.xcconfig"; sourceTree = "<group>"; };
 		D6E72502D5EA48E295E3CEBC /* Pods_CryptoPrices.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoPrices.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D788B967513F64FA46D79AA1 /* Pods-CryptoPrices.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoPrices.release.xcconfig"; path = "Target Support Files/Pods-CryptoPrices/Pods-CryptoPrices.release.xcconfig"; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 		0499279928C08FBE002EC5F0 /* CryptoPrices */ = {
 			isa = PBXGroup;
 			children = (
+				04C773DC28E81F6B00EB9AB7 /* Assets.xcassets */,
 				0499279A28C08FBE002EC5F0 /* AppDelegate.swift */,
 				0499279C28C08FBE002EC5F0 /* SceneDelegate.swift */,
 				0499279E28C08FBE002EC5F0 /* ViewController.swift */,
@@ -260,6 +263,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04C773DD28E81F6C00EB9AB7 /* Assets.xcassets in Resources */,
 				049927A728C08FBF002EC5F0 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

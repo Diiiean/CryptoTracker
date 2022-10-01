@@ -88,38 +88,40 @@ class ViewController: UIViewController {
             case .success(let models):
                 self?.viewModels = models.compactMap({ model in
                     //  NUMBER FORMATTER price
-                    let price = Float(model.price ?? "0.0")
-                    let priceString = price?.asCurrencyWithFormatter()
+                    
+                    let priceString = model.price?.asCurrencyWithFormatter()
                     //  NUMBER FORMATTER market cap
-                    let marketCap = Double(model.marketCap ?? "0.00")
-                    let marketCapString = marketCap?.asCurrencyWithFormatter()
+                    
+                    let marketCapString = model.marketCap?.asCurrencyWithFormatter()
                     // Percent formatter for 1d
-                    let oneDayChangePct = Float(model.oneDay?.priceChangePct ?? "0.00%")
-                    let oneDayPctString = oneDayChangePct?.asPctChangesWithFormatter()
+                    
+                    let oneDayPctString = model.oneDay?.asCurrencyWithFormatter()
                     // Percent formatter for 7d
-                    let sevenDaysChangePct = Float(model.sevenDay?.priceChangePct ?? "0.00%")
-                    let sevenDaysPctString = sevenDaysChangePct?.asPctChangesWithFormatter()
+                    
+                    let sevenDaysPctString = model.sevenDay?.asCurrencyWithFormatter()
                     //Volume formatter
-                    let volume = Double(model.oneDay?.volume ?? "0.00")
-                    let volumeString = volume?.asCurrencyWithFormatter()
+              
+                    let volumeString = model.volume?.asCurrencyWithFormatter()
                     //circulatingSupply formatter
-                    let circulatingSupply = Double(model.circulatingSupply ?? "0.00")
-                    let circulatingString = circulatingSupply?.asCurrencyWithFormatter()
-
-                    let iconURL = URL(
-                        string:
-                            APICaller.shared.icons.filter { icon in
-                            icon.asset_id == model.id
-                        }.first?.url ?? "https://upload.wikimedia.org/wikipedia/commons/9/97/Cryptocurrency_Gold.png")
-                    let pricesIn7D = APICaller.shared.pricesIn7D.filter { price in
-                        price.name == model.name
-                    }.first?.sparklineIn7D?.price ?? []
-                    let ath = APICaller.shared.pricesIn7D.filter { price in
-                        price.name == model.name
-                    }.first?.athChangePrct.asCurrencyWithFormatter()
+                    
+                    let circulatingString = model.circulatingSupply?.asCurrencyWithFormatter()
+                    let pricesIn7D = model.sparklineIn7D?.price ?? []
+                    let ath = model.athChangePrct?.asCurrencyWithFormatter()
+                    
+//                    let iconURL = URL(
+//                        string:
+//                            APICaller.shared.icons.filter { icon in
+//                            icon.asset_id == model.id
+//                        }.first?.url ?? "https://upload.wikimedia.org/wikipedia/commons/9/97/Cryptocurrency_Gold.png")
+//                    let pricesIn7D = APICaller.shared.pricesIn7D.filter { price in
+//                        price.name == model.name
+//                    }.first?.sparklineIn7D?.price ?? []
+//                    let ath = APICaller.shared.pricesIn7D.filter { price in
+//                        price.name == model.name
+//                    }.first?.athChangePrct.asCurrencyWithFormatter()
                     
                     return CryptoTableViewCellViewModel(name: model.name ?? "N/A",
-                                                        symbol: model.symbol ?? "", iconURL: iconURL,
+                                                        symbol: model.symbol ?? "", icon: model.image,
                                                         price: priceString ?? "N/A",
                                                         marketCap: marketCapString ?? "N/A", oneDayChangePct: oneDayPctString ?? "N/A", sevenDayChangePct: sevenDaysPctString ?? "N/A", circulatingSupply: circulatingString ?? "N/A", volume: volumeString ?? "N/A", priceIn7D: pricesIn7D, ath: ath ?? "N/A")
                     

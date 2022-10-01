@@ -13,7 +13,8 @@ class CryptoTableViewCellViewModel {
     let name: String
     let symbol: String
     let price: String
-    let iconURL: URL?
+    let icon: String
+    //let iconURL: URL?
     let marketCap: String
     let oneDayChangePct: String
     let sevenDayChangePct: String
@@ -40,11 +41,11 @@ class CryptoTableViewCellViewModel {
     
     
     
-    init(name: String, symbol: String, iconURL: URL?, price: String, marketCap: String, oneDayChangePct
+    init(name: String, symbol: String, icon: String, price: String, marketCap: String, oneDayChangePct
          : String, sevenDayChangePct: String, circulatingSupply: String, volume: String, priceIn7D: [Double], ath: String) {
         self.name = name
         self.symbol = symbol
-        self.iconURL = iconURL
+        self.icon = icon
         self.marketCap = marketCap
         self.price = price
         self.oneDayChangePct = oneDayChangePct

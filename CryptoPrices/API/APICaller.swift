@@ -30,7 +30,8 @@ final class APICaller {
         static let iconsEndPoint = "https://rest.coinapi.io/v1/assets/icons/"
         static let iconsSize = "30/"
         //COINGECKO CONST
-        static let geckoURL = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=true&price_change_percentage=24h"
+        static let geckoURL = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=true&price_change_percentage=1h%2C24h%2C7d"
+        static let geckoURLForChart = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=true&price_change_percentage=24h"
        
        
       
@@ -54,7 +55,7 @@ final class APICaller {
 //        guard let url = URL(string: Constants.assetsEndPoint + "ticker?key=" + Constants.apiKey + "&ranks=1&interval=1d,30d&convert=USD&per-page=10&page=1") else {
 //            return
 //        }
-        guard let url = URL(string: Constants.nomicsAssetsEndPoint + "ticker?key=" + Constants.nomicsApiKey) else {
+        guard let url = URL(string: Constants.geckoURL) else {
             return
         }
         let task = URLSession.shared.dataTask(with: url) { data, _, error in
@@ -69,7 +70,7 @@ final class APICaller {
                 let jsonResult = try JSONDecoder().decode([Crypto].self, from: data)
                 print("json result: -----\(jsonResult)")
                 completion(.success(jsonResult.sorted { first, second -> Bool in
-                    return Float(first.price ?? "0") ?? 0 > Float(second.price ?? "0") ?? 0
+                    return first.price ?? 0 > second.price ?? 0
                 }))
             } catch {
                 completion(.failure(error))
@@ -122,7 +123,7 @@ final class APICaller {
 //            task.resume()
 //    }
     public func getATHChangePct(completion: @escaping (Result<[PricesIn7D], Error>) -> Void) {
-        guard let url = URL(string: Constants.geckoURL) else { return }
+        guard let url = URL(string: Constants.geckoURLForChart) else { return }
             let task = URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
                 guard let data = data, error == nil else {
                     return
