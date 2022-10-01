@@ -8,7 +8,6 @@
 import UIKit
 import SpreadsheetView
 class ViewController: UIViewController {
-
     private let spreadsheetView: SpreadsheetView = {
         let spreadsheetView = SpreadsheetView()
         spreadsheetView.backgroundColor = .systemBackground
@@ -36,8 +35,8 @@ class ViewController: UIViewController {
         "Name",
         "Market Cap",
         "Price",
-        "1d%",
-        "7d%",
+        "1d",
+        "7d",
         "Volume (24h)",
         "Circulating Supply",
         "Last 7 Days",
@@ -49,33 +48,26 @@ class ViewController: UIViewController {
         setUp()
         setUpViews()
         fetchData()
-            }
+    }
     public func fetchData() {
         APICaller.shared.getAllCryptoData { [weak self] result in
             switch result {
             case .success(let models):
                 self?.viewModels = models.compactMap({ model in
                     //  NUMBER FORMATTER price
-                    
                     let priceString = model.price?.asCurrencyWithFormatter()
                     //  NUMBER FORMATTER market cap
-                    
                     let marketCapString = model.marketCap?.asCurrencyWithFormatter()
                     // Percent formatter for 1d
-                    
                     let oneDayPctString = model.oneDay?.asCurrencyWithFormatter()
                     // Percent formatter for 7d
-                    
                     let sevenDaysPctString = model.sevenDay?.asCurrencyWithFormatter()
                     //Volume formatter
-              
                     let volumeString = model.volume?.asCurrencyWithFormatter()
                     //circulatingSupply formatter
-                    
                     let circulatingString = model.circulatingSupply?.asCurrencyWithFormatter()
                     let pricesIn7D = model.sparklineIn7D?.price ?? []
                     let ath = model.athChangePrct?.asCurrencyWithFormatter()
-                    
                     return CryptoTableViewCellViewModel(name: model.name ?? "N/A",
                                                         symbol: model.symbol ?? "", icon: model.image,
                                                         price: priceString ?? "N/A",
@@ -93,35 +85,19 @@ class ViewController: UIViewController {
     }
     func setUp() {
         view.backgroundColor = .systemBackground
-//        view.backgroundColor =
-//          // 1
-//          UIColor { traitCollection in
-//            // 2
-//            switch traitCollection.userInterfaceStyle {
-//            case .dark:
-//              // 3
-//              return UIColor(white: 0.3, alpha: 1.0)
-//            default:
-//              // 4
-//              return UIColor(white: 0.7, alpha: 1.0)
-//            }
-//          }
         self.navigationItem.title = "Crypto Prices"
     }
     func setUpViews() {
         //SpreadsheetView
         spreadsheetView.dataSource = self
         spreadsheetView.delegate = self
-
         self.view.addSubview(spreadsheetView)
         spreadsheetView.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.safeAreaLayoutGuide.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.safeAreaLayoutGuide.trailingAnchor)
         spreadsheetView.backgroundColor = .systemBackground
     }
 }
-
 extension ViewController: SpreadsheetViewDelegate, SpreadsheetViewDataSource  {
     func spreadsheetView(_ spreadsheetView: SpreadsheetView, cellForItemAt indexPath: IndexPath) -> Cell? {
-
         //HeaderColumns placement
         if indexPath.row == 0 {
             let headerCell = spreadsheetView.dequeueReusableCell(withReuseIdentifier: ColumnHeaderCell.identifier, for: indexPath) as! ColumnHeaderCell
@@ -139,38 +115,20 @@ extension ViewController: SpreadsheetViewDelegate, SpreadsheetViewDataSource  {
         if indexPath.section == 1 && indexPath.row > 0 {
             let cryptoNamesCell = spreadsheetView.dequeueReusableCell(withReuseIdentifier: CryptoNameCell.identifier, for: indexPath) as! CryptoNameCell
             cryptoNamesCell.backgroundColor = .systemBackground
-            
-//            cryptoNamesCell.gridlines.top = .solid(width: 1, color: .black)
-//            cryptoNamesCell.gridlines.left = .none
-//            cryptoNamesCell.gridlines.bottom = .solid(width: 1, color: .black)
-//            cryptoNamesCell.gridlines.right = .none
-           
             cryptoNamesCell.configure(with: viewModels[indexPath.row])
             return cryptoNamesCell
         }// market cap
         if indexPath.section == 2 && indexPath.row > 0 {
             let marketCapCell = spreadsheetView.dequeueReusableCell(withReuseIdentifier: MarketCapCell.identifier, for: indexPath) as! MarketCapCell
             marketCapCell.backgroundColor = .systemBackground
-            
-//            cryptoPriceCell.gridlines.top = .solid(width: 1, color: .black)
-//            cryptoPriceCell.gridlines.left = .none
-//            cryptoPriceCell.gridlines.bottom = .solid(width: 1, color: .black)
-//            cryptoPriceCell.gridlines.right = .none
             marketCapCell.configure(with: viewModels[indexPath.row])
-            
             return marketCapCell
         }
         //Price cell
         if indexPath.section == 3 && indexPath.row > 0 {
             let cryptoPriceCell = spreadsheetView.dequeueReusableCell(withReuseIdentifier: CryptoPriceCell.identifier, for: indexPath) as! CryptoPriceCell
             cryptoPriceCell.backgroundColor = .systemBackground
-            
-//            cryptoPriceCell.gridlines.top = .solid(width: 1, color: .black)
-//            cryptoPriceCell.gridlines.left = .none
-//            cryptoPriceCell.gridlines.bottom = .solid(width: 1, color: .black)
-//            cryptoPriceCell.gridlines.right = .none
             cryptoPriceCell.configure(with: viewModels[indexPath.row])
-            
             return cryptoPriceCell
         } //1d%
         if indexPath.section == 4 && indexPath.row > 0 {
@@ -218,42 +176,20 @@ extension ViewController: SpreadsheetViewDelegate, SpreadsheetViewDataSource  {
             
             return athCell
         }
-        
-//        let columnHeaderData = [
-//            "#",
-//            "Name",
-//            "Market Cap",
-//            "Price",
-//            "1d%",
-//            "7d%",
-//            "Volume (24h)",
-//            "Circulating Supply",
-//            "Last 7 Days",
-//            "Change (24h)"
-//        ]
-        
         return nil
     }
-    
-    //self.spreadsheetView(spreadsheetView, cryptoNameCellForItemAt: IndexPath)
-    
     func frozenColumns(in spreadsheetView: SpreadsheetView) -> Int {
         return 2
     }
-    
-    
     func frozenRows(in spreadsheetView: SpreadsheetView) -> Int {
         1
     }
     func numberOfRows(in spreadsheetView: SpreadsheetView) -> Int {
         return max(1, viewModels.count)
     }
-    
-    
     func numberOfColumns(in spreadsheetView: SpreadsheetView) -> Int {
         return columnHeaderData.count
     }
-    
     func spreadsheetView(_ spreadsheetView: SpreadsheetView, widthForColumn column: Int) -> CGFloat {
         if column == 0 {
             return 50
@@ -271,10 +207,8 @@ extension ViewController: SpreadsheetViewDelegate, SpreadsheetViewDataSource  {
     }
     func spreadsheetView(_ spreadsheetView: SpreadsheetView, heightForRow row: Int) -> CGFloat {
         return 60
-        
     }
 }
-
 extension SpreadsheetView {
     func anchor(top: NSLayoutYAxisAnchor, leading: NSLayoutXAxisAnchor, bottom: NSLayoutYAxisAnchor, trailing: NSLayoutXAxisAnchor) {
         translatesAutoresizingMaskIntoConstraints = false

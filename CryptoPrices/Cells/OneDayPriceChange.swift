@@ -19,7 +19,15 @@ final class OneDayPriceChangeCell: Cell {
         label.adjustsFontSizeToFitWidth = true
         return label
     }()
-    
+    private var prct: UILabel = {
+        let label = UILabel()
+        label.text = "%"
+        label.numberOfLines = 0
+        label.sizeToFit()
+        label.adjustsFontSizeToFitWidth = true
+        label.textAlignment = .center
+        return label
+    }()
     private let upperArrowImage: UIImageView = {
         let image = UIImage(systemName: "arrowtriangle.up.fill")!
         let imageView = UIImageView(image: image)
@@ -49,12 +57,13 @@ final class OneDayPriceChangeCell: Cell {
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .horizontal
         stack.alignment = .leading
-        stack.spacing = 7
+        stack.spacing = 4
         stack.clipsToBounds = true
         
         stack.addArrangedSubview(downArrowImage)
         stack.addArrangedSubview(upperArrowImage)
         stack.addArrangedSubview(oneDayPercentLabel)
+        stack.addArrangedSubview(prct)
         return stack
     }()
     
@@ -108,18 +117,6 @@ final class OneDayPriceChangeCell: Cell {
         //upperArrowImage.image = nil
         //downArrowImage.image = nil
     }
-
-    //    public func setup(with text: String) {
-    //        cryptoNameLabel.text = text
-    //        contentView.addSubview(cryptoNameLabel)
-    //    }
-
-    //    override func layoutSubviews() {
-    //        super.layoutSubviews()
-    //        cryptoNameLabel.frame = contentView.bounds
-    //
-    //
-    //}
     func configure(with viewModel: CryptoTableViewCellViewModel) {
         [stackView].forEach { contentView.addSubview($0)
         }
@@ -132,11 +129,13 @@ final class OneDayPriceChangeCell: Cell {
             downArrowImage.isHidden = false
             upperArrowImage.isHidden = true
             oneDayPercentLabel.textColor = .systemRed
+            prct.textColor = .systemRed
         }
         else {
             downArrowImage.isHidden = true
             upperArrowImage.isHidden = false
             oneDayPercentLabel.textColor = .systemGreen
+            prct.textColor = .systemGreen
         }
     }
     }

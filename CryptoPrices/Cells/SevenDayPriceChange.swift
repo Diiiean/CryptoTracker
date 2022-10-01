@@ -18,6 +18,15 @@ final class SevenDayPercentCell: Cell {
         label.textAlignment = .center
         return label
     }()
+    private var prct: UILabel = {
+        let label = UILabel()
+        label.text = "%"
+        label.sizeToFit()
+        label.numberOfLines = 0
+        label.adjustsFontSizeToFitWidth = true
+        label.textAlignment = .center
+        return label
+    }()
     
     private let upperArrowImage: UIImageView = {
         let image = UIImage(systemName: "arrowtriangle.up.fill")!
@@ -48,12 +57,13 @@ final class SevenDayPercentCell: Cell {
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .horizontal
         stack.alignment = .leading
-        stack.spacing = 7
+        stack.spacing = 4
         stack.clipsToBounds = true
         
         stack.addArrangedSubview(downArrowImage)
         stack.addArrangedSubview(upperArrowImage)
         stack.addArrangedSubview(sevenDayPercentLabel)
+        stack.addArrangedSubview(prct)
         return stack
     }()
     
@@ -152,9 +162,11 @@ final class SevenDayPercentCell: Cell {
             downArrowImage.isHidden = false
             upperArrowImage.isHidden = true
             sevenDayPercentLabel.textColor = .systemRed
+            prct.textColor = .systemRed
         } else {
             downArrowImage.isHidden = true
             upperArrowImage.isHidden = false
+            prct.textColor = .systemGreen
             sevenDayPercentLabel.textColor = .systemGreen
         }
         

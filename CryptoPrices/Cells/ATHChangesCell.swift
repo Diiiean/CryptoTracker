@@ -26,7 +26,15 @@ final class ATHChangesCell: Cell {
         imageView.isHidden = false
         return imageView
     }()
-
+    private var prct: UILabel = {
+        let label = UILabel()
+        label.text = "%"
+        label.sizeToFit()
+        label.numberOfLines = 0
+        label.adjustsFontSizeToFitWidth = true
+        label.textAlignment = .center
+        return label
+    }()
     private let downArrowImage: UIImageView = {
         let image = UIImage(systemName: "arrowtriangle.down.fill")!
         let imageView = UIImageView(image: image)
@@ -41,12 +49,13 @@ final class ATHChangesCell: Cell {
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .horizontal
         stack.alignment = .leading
-        stack.spacing = 7
+        stack.spacing = 4
         stack.clipsToBounds = true
         
         stack.addArrangedSubview(downArrowImage)
         stack.addArrangedSubview(upperArrowImage)
         stack.addArrangedSubview(athPrctLabel)
+        stack.addArrangedSubview(prct)
         return stack
     }()
     
@@ -84,12 +93,14 @@ final class ATHChangesCell: Cell {
             downArrowImage.isHidden = false
             upperArrowImage.isHidden = true
             athPrctLabel.textColor = .systemRed
+            prct.textColor = .systemRed
         }
         else {
             downArrowImage.isHidden = true
             upperArrowImage.isHidden = false
             athPrctLabel.text = editedLabel
             athPrctLabel.textColor = .systemGreen
+            prct.textColor = .systemGreen
         }
     }
 }
