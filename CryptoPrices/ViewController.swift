@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  CryptoPrices
-//
-//  Created by Диана Нуансенгси on 1.09.22.
-//
-
 import UIKit
 import SpreadsheetView
 class ViewController: UIViewController {
@@ -27,9 +20,7 @@ class ViewController: UIViewController {
         spreadsheetView.register(ATHChangesCell.self, forCellWithReuseIdentifier: ATHChangesCell.identifier)
         return spreadsheetView
     }()
-    
     private var viewModels = [CryptoTableViewCellViewModel]()
-    
     let columnHeaderData = [
         "#",
         "Name",
@@ -42,14 +33,25 @@ class ViewController: UIViewController {
         "Last 7 Days",
         "Change since ATH"
     ]
-    private var data: [Double]? = [Double]()
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
         setUpViews()
         fetchData()
+        spreadsheetView.scrollView.refreshControl = UIRefreshControl()
+        spreadsheetView.scrollView.refreshControl?.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
+    }
+    @objc private func didPullToRefresh() {
+        //Re-fetch data
+        fetchData()
     }
     public func fetchData() {
+        if spreadsheetView.scrollView.refreshControl?.isRefreshing == true {
+            print("refreshing data")
+        } else {
+            print("fetching data")
+        }
         APICaller.shared.getAllCryptoData { [weak self] result in
             switch result {
             case .success(let models):
@@ -72,11 +74,10 @@ class ViewController: UIViewController {
                                                         symbol: model.symbol ?? "", icon: model.image,
                                                         price: priceString ?? "N/A",
                                                         marketCap: marketCapString ?? "N/A", oneDayChangePct: oneDayPctString ?? "N/A", sevenDayChangePct: sevenDaysPctString ?? "N/A", circulatingSupply: circulatingString ?? "N/A", volume: volumeString ?? "N/A", priceIn7D: pricesIn7D, ath: ath ?? "N/A")
-                    
                 })
                 DispatchQueue.main.async {
+                    self?.spreadsheetView.scrollView.refreshControl?.endRefreshing()
                     self?.spreadsheetView.reloadData()
-                    
                 }
             case .failure(let error):
                 print("error no fetchData() response + \(error)")
@@ -95,6 +96,7 @@ class ViewController: UIViewController {
         spreadsheetView.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.safeAreaLayoutGuide.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.safeAreaLayoutGuide.trailingAnchor)
         spreadsheetView.backgroundColor = .systemBackground
     }
+   
 }
 extension ViewController: SpreadsheetViewDelegate, SpreadsheetViewDataSource  {
     func spreadsheetView(_ spreadsheetView: SpreadsheetView, cellForItemAt indexPath: IndexPath) -> Cell? {
@@ -115,7 +117,7 @@ extension ViewController: SpreadsheetViewDelegate, SpreadsheetViewDataSource  {
         if indexPath.section == 1 && indexPath.row > 0 {
             let cryptoNamesCell = spreadsheetView.dequeueReusableCell(withReuseIdentifier: CryptoNameCell.identifier, for: indexPath) as! CryptoNameCell
             cryptoNamesCell.backgroundColor = .systemBackground
-            cryptoNamesCell.configure(with: viewModels[indexPath.row])
+            cryptoNamesCell.configure(with: viewModels[indexPath.row]) //Тут index out of range , если viewModels.removeAll()
             return cryptoNamesCell
         }// market cap
         if indexPath.section == 2 && indexPath.row > 0 {
@@ -135,7 +137,6 @@ extension ViewController: SpreadsheetViewDelegate, SpreadsheetViewDataSource  {
             let oneDayPercent = spreadsheetView.dequeueReusableCell(withReuseIdentifier: OneDayPriceChangeCell.identifier, for: indexPath) as! OneDayPriceChangeCell
             oneDayPercent.backgroundColor = .systemBackground
             oneDayPercent.configure(with: viewModels[indexPath.row])
-            
             return oneDayPercent
         } //7d%
         if indexPath.section == 5 && indexPath.row > 0 {
@@ -185,7 +186,13 @@ extension ViewController: SpreadsheetViewDelegate, SpreadsheetViewDataSource  {
         1
     }
     func numberOfRows(in spreadsheetView: SpreadsheetView) -> Int {
-        return max(1, viewModels.count)
+        /*
+         чтобы frozenRows было не меньше , чем viewModels.count,
+         если просто вернуть viewModels.count, то изначально оно = 0
+         и тогда нечего замораживать
+         */
+        1 + viewModels.count
+        //return max(1, viewModels.count)
     }
     func numberOfColumns(in spreadsheetView: SpreadsheetView) -> Int {
         return columnHeaderData.count
