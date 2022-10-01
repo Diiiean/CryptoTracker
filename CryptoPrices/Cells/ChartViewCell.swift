@@ -212,7 +212,7 @@ final class ChartViewCell: Cell, ChartViewDelegate {
     //
     //
     //}
-    func configure(with viewModel: ChartModel) {
+    func configure(with viewModel: CryptoTableViewCellViewModel) {
         contentView.addSubview(lineChartView)
        
         

@@ -30,8 +30,7 @@ class ViewController: UIViewController {
     }()
     
     private var viewModels = [CryptoTableViewCellViewModel]()
-    private var chartModels = [ChartModel]()
-    private var athChangeModel = [ATHModel]()
+    
     let columnHeaderData = [
         "#",
         "Name",
@@ -50,38 +49,7 @@ class ViewController: UIViewController {
         setUp()
         setUpViews()
         fetchData()
-        fetchChartData()
-        fetchATHChangeData()
             }
-    private func fetchATHChangeData() {
-        APICaller.shared.getATHChangePct { [weak self] result in
-            switch result {
-            case .success(let models):
-                self?.athChangeModel = models.compactMap({ model in
-                    let athChangeString = model.athChangePrct.asCurrencyWithFormatter()
-                    return ATHModel(athChange: athChangeString)
-                })
-            case .failure(let error):
-                print("error no ath_change_percent response + \(error)")
-            }
-        }
-    }
-    private func fetchChartData() {
-        let api = ChartAPICaller()
-         
-             api.getData { [weak self] result in
-                 switch result {
-                 case .success(let models):
-                     self?.chartModels = models.compactMap({ model  in
-                         let priceArray = model.sparklineIn7D?.price ?? []
-                         return ChartModel(priceIn7D: priceArray)
-                        
-                     })
-                 case .failure(let error):
-                     print("error no chart response + \(error)")
-                    }
-                 }
-             }
     public func fetchData() {
         APICaller.shared.getAllCryptoData { [weak self] result in
             switch result {
@@ -107,18 +75,6 @@ class ViewController: UIViewController {
                     let circulatingString = model.circulatingSupply?.asCurrencyWithFormatter()
                     let pricesIn7D = model.sparklineIn7D?.price ?? []
                     let ath = model.athChangePrct?.asCurrencyWithFormatter()
-                    
-//                    let iconURL = URL(
-//                        string:
-//                            APICaller.shared.icons.filter { icon in
-//                            icon.asset_id == model.id
-//                        }.first?.url ?? "https://upload.wikimedia.org/wikipedia/commons/9/97/Cryptocurrency_Gold.png")
-//                    let pricesIn7D = APICaller.shared.pricesIn7D.filter { price in
-//                        price.name == model.name
-//                    }.first?.sparklineIn7D?.price ?? []
-//                    let ath = APICaller.shared.pricesIn7D.filter { price in
-//                        price.name == model.name
-//                    }.first?.athChangePrct.asCurrencyWithFormatter()
                     
                     return CryptoTableViewCellViewModel(name: model.name ?? "N/A",
                                                         symbol: model.symbol ?? "", icon: model.image,
@@ -158,13 +114,9 @@ class ViewController: UIViewController {
         spreadsheetView.delegate = self
 
         self.view.addSubview(spreadsheetView)
-        
         spreadsheetView.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.safeAreaLayoutGuide.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.safeAreaLayoutGuide.trailingAnchor)
         spreadsheetView.backgroundColor = .systemBackground
-        
-        
     }
-  
 }
 
 extension ViewController: SpreadsheetViewDelegate, SpreadsheetViewDataSource  {
@@ -254,7 +206,7 @@ extension ViewController: SpreadsheetViewDelegate, SpreadsheetViewDataSource  {
         if indexPath.section == 8 && indexPath.row > 0 {
             let priceChart = spreadsheetView.dequeueReusableCell(withReuseIdentifier: ChartViewCell.identifier, for: indexPath) as! ChartViewCell
             priceChart.backgroundColor = .systemBackground
-            priceChart.configure(with: chartModels[indexPath.row])
+            priceChart.configure(with: viewModels[indexPath.row])
             
             return priceChart
         }

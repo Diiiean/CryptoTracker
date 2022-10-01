@@ -27,13 +27,11 @@
 		04C7738728CC4BF300EB9AB7 /* Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C7738628CC4BF300EB9AB7 /* Float.swift */; };
 		04C7738928CC510500EB9AB7 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C7738828CC510500EB9AB7 /* Double.swift */; };
 		04C7738C28CD392E00EB9AB7 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C7738B28CD392E00EB9AB7 /* ChartView.swift */; };
-		04C7738E28CD39DA00EB9AB7 /* ChartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C7738D28CD39DA00EB9AB7 /* ChartModel.swift */; };
 		04C7739028CDEE8D00EB9AB7 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C7738F28CDEE8D00EB9AB7 /* String.swift */; };
 		04C7739628D3BE9B00EB9AB7 /* ChartViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C7739528D3BE9B00EB9AB7 /* ChartViewCell.swift */; };
 		04C7739C28D4998D00EB9AB7 /* ChartAPICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C7739B28D4998D00EB9AB7 /* ChartAPICaller.swift */; };
 		04C773A028D6024100EB9AB7 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C7739F28D6024100EB9AB7 /* PreviewProvider.swift */; };
 		04C773D528E43DEA00EB9AB7 /* ATHChangesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C773D428E43DEA00EB9AB7 /* ATHChangesCell.swift */; };
-		04C773D728E43FA300EB9AB7 /* ATHModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C773D628E43FA300EB9AB7 /* ATHModel.swift */; };
 		04C773D928E5827200EB9AB7 /* FavoritesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C773D828E5827200EB9AB7 /* FavoritesCell.swift */; };
 		04C773DB28E6147700EB9AB7 /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C773DA28E6147700EB9AB7 /* UIStackView.swift */; };
 		04C773DD28E81F6C00EB9AB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04C773DC28E81F6B00EB9AB7 /* Assets.xcassets */; };
@@ -63,13 +61,11 @@
 		04C7738628CC4BF300EB9AB7 /* Float.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Float.swift; sourceTree = "<group>"; };
 		04C7738828CC510500EB9AB7 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		04C7738B28CD392E00EB9AB7 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
-		04C7738D28CD39DA00EB9AB7 /* ChartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartModel.swift; sourceTree = "<group>"; };
 		04C7738F28CDEE8D00EB9AB7 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		04C7739528D3BE9B00EB9AB7 /* ChartViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewCell.swift; sourceTree = "<group>"; };
 		04C7739B28D4998D00EB9AB7 /* ChartAPICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartAPICaller.swift; sourceTree = "<group>"; };
 		04C7739F28D6024100EB9AB7 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 		04C773D428E43DEA00EB9AB7 /* ATHChangesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATHChangesCell.swift; sourceTree = "<group>"; };
-		04C773D628E43FA300EB9AB7 /* ATHModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATHModel.swift; sourceTree = "<group>"; };
 		04C773D828E5827200EB9AB7 /* FavoritesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCell.swift; sourceTree = "<group>"; };
 		04C773DA28E6147700EB9AB7 /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 		04C773DC28E81F6B00EB9AB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
@@ -131,8 +127,6 @@
 			children = (
 				049927D228C3AC22002EC5F0 /* CoinModel.swift */,
 				049927E328C871A0002EC5F0 /* CellViewModel.swift */,
-				04C7738D28CD39DA00EB9AB7 /* ChartModel.swift */,
-				04C773D628E43FA300EB9AB7 /* ATHModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -331,13 +325,11 @@
 				04C7738528CC4B8500EB9AB7 /* UILabel.swift in Sources */,
 				049927EC28CA8713002EC5F0 /* CirculatingSupplyCell.swift in Sources */,
 				049927D928C3EC0E002EC5F0 /* CryptoPriceCell.swift in Sources */,
-				04C773D728E43FA300EB9AB7 /* ATHModel.swift in Sources */,
 				049927DF28C6432F002EC5F0 /* UIImageView.swift in Sources */,
 				04C7738C28CD392E00EB9AB7 /* ChartView.swift in Sources */,
 				049927DB28C3EC9A002EC5F0 /* MarketCapCell.swift in Sources */,
 				04C7738728CC4BF300EB9AB7 /* Float.swift in Sources */,
 				049927D328C3AC22002EC5F0 /* CoinModel.swift in Sources */,
-				04C7738E28CD39DA00EB9AB7 /* ChartModel.swift in Sources */,
 				049927EE28CA8BA5002EC5F0 /* SevenDayPriceChange.swift in Sources */,
 				049927B128C2684D002EC5F0 /* APICaller.swift in Sources */,
 				04C773DB28E6147700EB9AB7 /* UIStackView.swift in Sources */,

@@ -7,18 +7,18 @@
 
 import Foundation
 
-struct SpreadSheetConstants {
-    enum Headers: String {
-        case name = "Name",
-             marketCap = "Market Cap",
-             price = "Price",
-             volume = "Volume (24h)",
-             circulatingSupply = "Circulating Supply",
-             last7days = "Last 7 Days",
-             change24h = "Change (24h)"
-    }
-
-}
+//struct SpreadSheetConstants {
+//    enum Headers: String {
+//        case name = "Name",
+//             marketCap = "Market Cap",
+//             price = "Price",
+//             volume = "Volume (24h)",
+//             circulatingSupply = "Circulating Supply",
+//             last7days = "Last 7 Days",
+//             change24h = "Change (24h)"
+//    }
+//
+//}
 
 // MARK: - Crypto
 struct Crypto: Codable, Identifiable {
@@ -55,48 +55,11 @@ struct Crypto: Codable, Identifiable {
     }
 }
 
-struct PricesIn7D: Codable {
-    let id: String
-    let name: String
-    let athChangePrct: Float
-    let sparklineIn7D: SparklineIn7D?
 
-    enum CodingKeys: String, CodingKey {
-        case id
-        case name
-        case sparklineIn7D = "sparkline_in_7d"
-        case athChangePrct = "ath_change_percentage"
-    }
-}
 
 // MARK: - SparklineIn7D
 struct SparklineIn7D: Codable {
     let price: [Double]?
 }
 
-// MARK: - OneDayChanges
-struct OneDayChanges: Codable {
-    let priceChangePct: String
-    let volume: String
-    enum CodingKeys: String, CodingKey {
-        case priceChangePct = "price_change_pct"
-        case volume
-    }
-}
 
-// MARK: - SevenDayChanges
-struct SevenDayChanges: Codable {
-    let priceChangePct: String
-    
-    enum CodingKeys: String, CodingKey {
-        case priceChangePct = "price_change_pct"
-    }
-}
-
-
-
-// MARK: - Icon
-struct Icon: Codable {
-    let asset_id: String
-    let url: String
-}

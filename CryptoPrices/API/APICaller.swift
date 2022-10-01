@@ -42,16 +42,13 @@ final class APICaller {
         
     }
    
-    public var icons: [Icon] = []
-    public var pricesIn7D: [PricesIn7D] = []
+   
+    
 
-    private var whenReadyBlock: ((Result<[Crypto], Error>) -> Void)?
+
     
     public func getAllCryptoData(completion: @escaping (Result<[Crypto], Error>) -> Void) {
-        guard !icons.isEmpty else {
-            whenReadyBlock = completion
-            return
-        }
+        
 //        guard let url = URL(string: Constants.assetsEndPoint + "ticker?key=" + Constants.apiKey + "&ranks=1&interval=1d,30d&convert=USD&per-page=10&page=1") else {
 //            return
 //        }
@@ -64,11 +61,7 @@ final class APICaller {
             }
             
             do {
-                //Decode
-                
-                //decoder.keyDecodingStrategy = .convertFromSnakeCase
                 let jsonResult = try JSONDecoder().decode([Crypto].self, from: data)
-                print("json result: -----\(jsonResult)")
                 completion(.success(jsonResult.sorted { first, second -> Bool in
                     return first.price ?? 0 > second.price ?? 0
                 }))
@@ -79,28 +72,7 @@ final class APICaller {
         
         task.resume()
     }
-    public func getAllIcons() {
-        guard let url = URL(string: Constants.iconsEndPoint + Constants.iconsSize + "?apiKey=" + Constants.iconsApiKey) else {
-            return }
-            let task = URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
-                guard let data = data, error == nil else {
-                    return
-                }
-                
-                do {
-                    //Decode responce
-                    self?.icons = try JSONDecoder().decode([Icon].self, from: data)
-                    if let completion = self?.whenReadyBlock {
-                        self?.getAllCryptoData(completion: completion)
-                    }
-                    
-                } catch {
-                    print(error)
-                }
-            }
-            
-            task.resume()
-        }
+  
     
 //    public func getpriceArrayIn7D(completion: @escaping (Result<[PricesIn7D], Error>) -> Void) {
 //        guard let url = URL(string: Constants.geckoURL) else { return }
@@ -122,25 +94,7 @@ final class APICaller {
 //
 //            task.resume()
 //    }
-    public func getATHChangePct(completion: @escaping (Result<[PricesIn7D], Error>) -> Void) {
-        guard let url = URL(string: Constants.geckoURLForChart) else { return }
-            let task = URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
-                guard let data = data, error == nil else {
-                    return
-                }
-                do {
-                    //Decode responce
-                    self?.pricesIn7D = try JSONDecoder().decode([PricesIn7D].self, from: data)
-                    
-                   // print("\(self?.pricesIn7D[0].sparklineIn7D?.price)")
-                } catch {
-                    //completion(.failure(error))
-                    print(error)
-                }
-            }
-            
-            task.resume()
-    }
+ 
     
     
     }
