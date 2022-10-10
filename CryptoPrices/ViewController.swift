@@ -1,5 +1,6 @@
 import UIKit
 import SpreadsheetView
+
 class ViewController: UIViewController {
     private let spreadsheetView: SpreadsheetView = {
         let spreadsheetView = SpreadsheetView()
@@ -18,9 +19,12 @@ class ViewController: UIViewController {
         spreadsheetView.register(VolumeCell.self, forCellWithReuseIdentifier: VolumeCell.identifier)
         spreadsheetView.register(ChartViewCell.self, forCellWithReuseIdentifier: ChartViewCell.identifier)
         spreadsheetView.register(ATHChangesCell.self, forCellWithReuseIdentifier: ATHChangesCell.identifier)
+        spreadsheetView.register(FavoritesCell.self, forCellWithReuseIdentifier: FavoritesCell.identifier)
         return spreadsheetView
     }()
+    
     private var viewModels = [CryptoTableViewCellViewModel]()
+    
     let columnHeaderData = [
         "#",
         "Name",
@@ -43,15 +47,10 @@ class ViewController: UIViewController {
         spreadsheetView.scrollView.refreshControl?.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
     }
     @objc private func didPullToRefresh() {
-        //Re-fetch data
         fetchData()
     }
     public func fetchData() {
-        if spreadsheetView.scrollView.refreshControl?.isRefreshing == true {
-            print("refreshing data")
-        } else {
-            print("fetching data")
-        }
+        //viewModels.removeAll()
         APICaller.shared.getAllCryptoData { [weak self] result in
             switch result {
             case .success(let models):
@@ -108,11 +107,15 @@ extension ViewController: SpreadsheetViewDelegate, SpreadsheetViewDataSource  {
             headerCell.gridlines.left = .none
             headerCell.gridlines.bottom = .solid(width: 1, color: .black)
             headerCell.gridlines.right = .none
+          
             headerCell.setup(with: columnHeaderData[indexPath.section])
             return headerCell
         } //Names cell
         if indexPath.section == 0 && indexPath.row > 0 {
-            
+            let favCell = spreadsheetView.dequeueReusableCell(withReuseIdentifier: FavoritesCell.identifier, for: indexPath) as! FavoritesCell
+            favCell.backgroundColor = .systemBackground
+            favCell.configure(with: indexPath.row)
+            return favCell
         }
         if indexPath.section == 1 && indexPath.row > 0 {
             let cryptoNamesCell = spreadsheetView.dequeueReusableCell(withReuseIdentifier: CryptoNameCell.identifier, for: indexPath) as! CryptoNameCell
@@ -150,7 +153,6 @@ extension ViewController: SpreadsheetViewDelegate, SpreadsheetViewDataSource  {
             let volumeCell = spreadsheetView.dequeueReusableCell(withReuseIdentifier: VolumeCell.identifier, for: indexPath) as! VolumeCell
             volumeCell.backgroundColor = .systemBackground
             volumeCell.configure(with: viewModels[indexPath.row])
-            
             return volumeCell
         }
         //Circulating Supply
@@ -179,6 +181,11 @@ extension ViewController: SpreadsheetViewDelegate, SpreadsheetViewDataSource  {
         }
         return nil
     }
+//    func spreadsheetView(_ spreadsheetView: SpreadsheetView, didSelectItemAt indexPath: IndexPath) {
+//        if indexPath.section == 0 && indexPath.row > 0 {
+//            favIndexPath = indexPath
+//        }
+//    }
     func frozenColumns(in spreadsheetView: SpreadsheetView) -> Int {
         return 2
     }
@@ -186,13 +193,7 @@ extension ViewController: SpreadsheetViewDelegate, SpreadsheetViewDataSource  {
         1
     }
     func numberOfRows(in spreadsheetView: SpreadsheetView) -> Int {
-        /*
-         чтобы frozenRows было не меньше , чем viewModels.count,
-         если просто вернуть viewModels.count, то изначально оно = 0
-         и тогда нечего замораживать
-         */
-        1 + viewModels.count
-        //return max(1, viewModels.count)
+        max(1, viewModels.count)
     }
     func numberOfColumns(in spreadsheetView: SpreadsheetView) -> Int {
         return columnHeaderData.count
@@ -210,7 +211,7 @@ extension ViewController: SpreadsheetViewDelegate, SpreadsheetViewDataSource  {
         if column == 6 {
             return 150
         }
-        else { return 130 }
+        else { return 120 }
     }
     func spreadsheetView(_ spreadsheetView: SpreadsheetView, heightForRow row: Int) -> CGFloat {
         return 60
@@ -225,3 +226,4 @@ extension SpreadsheetView {
         trailingAnchor.constraint(equalTo: trailing).isActive = true
     }
 }
+

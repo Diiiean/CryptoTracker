@@ -14,6 +14,7 @@ final class ATHChangesCell: Cell {
     private var athPrctLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
+        label.adjustsFontSizeToFitWidth = true
         label.textAlignment = .center
         return label
     }()
@@ -51,7 +52,6 @@ final class ATHChangesCell: Cell {
         stack.alignment = .leading
         stack.spacing = 4
         stack.clipsToBounds = true
-        
         stack.addArrangedSubview(downArrowImage)
         stack.addArrangedSubview(upperArrowImage)
         stack.addArrangedSubview(athPrctLabel)
@@ -74,6 +74,10 @@ final class ATHChangesCell: Cell {
     }
     override func prepareForReuse() {
         super.prepareForReuse()
+//        stackView.addArrangedSubview(downArrowImage)
+//        stackView.addArrangedSubview(upperArrowImage)
+//        stackView.addArrangedSubview(athPrctLabel)
+        //stackView.addArrangedSubview(prct)
         athPrctLabel.text = nil
         athPrctLabel.textColor = nil
     }

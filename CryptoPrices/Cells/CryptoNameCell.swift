@@ -102,7 +102,7 @@ final class CryptoNameCell: Cell {
         symbolLabel.text = viewModel.symbol
 
         if let url = URL(string: viewModel.icon) {
-            iconImageView.sd_setImage(with: url, placeholderImage: placeHolderImage, options: [.refreshCached], completed: { [weak self] downloadedImage, downloadException, cacheType, downloadURL in
+            iconImageView.sd_setImage(with: url, placeholderImage: nil, options: [.refreshCached], completed: { [weak self] downloadedImage, downloadException, cacheType, downloadURL in
                 if let downloadException = downloadException {
                     
                     print("Error downloading iconImage: \(downloadException.localizedDescription)")
