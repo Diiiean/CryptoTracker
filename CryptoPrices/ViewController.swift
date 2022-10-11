@@ -50,7 +50,6 @@ class ViewController: UIViewController {
         fetchData()
     }
     public func fetchData() {
-        //viewModels.removeAll()
         APICaller.shared.getAllCryptoData { [weak self] result in
             switch result {
             case .success(let models):
@@ -107,7 +106,6 @@ extension ViewController: SpreadsheetViewDelegate, SpreadsheetViewDataSource  {
             headerCell.gridlines.left = .none
             headerCell.gridlines.bottom = .solid(width: 1, color: .black)
             headerCell.gridlines.right = .none
-          
             headerCell.setup(with: columnHeaderData[indexPath.section])
             return headerCell
         } //Names cell
@@ -181,19 +179,18 @@ extension ViewController: SpreadsheetViewDelegate, SpreadsheetViewDataSource  {
         }
         return nil
     }
-//    func spreadsheetView(_ spreadsheetView: SpreadsheetView, didSelectItemAt indexPath: IndexPath) {
-//        if indexPath.section == 0 && indexPath.row > 0 {
-//            favIndexPath = indexPath
-//        }
-//    }
+    func spreadsheetView(_ spreadsheetView: SpreadsheetView, didSelectItemAt indexPath: IndexPath) {
+        self.scrollToTop()
+    }
+    private func scrollToTop() {
+        let topRow = IndexPath(row: 0, column: 0)
+        self.spreadsheetView.scrollToItem(at: topRow, at: .top, animated: true)
+    }
     func frozenColumns(in spreadsheetView: SpreadsheetView) -> Int {
         return 2
     }
     func frozenRows(in spreadsheetView: SpreadsheetView) -> Int {
         1
-    }
-    func spreadsheetView(_ spreadsheetView: SpreadsheetView, didSelectItemAt indexPath: IndexPath) {
-        
     }
     func numberOfRows(in spreadsheetView: SpreadsheetView) -> Int {
         max(1, viewModels.count)
