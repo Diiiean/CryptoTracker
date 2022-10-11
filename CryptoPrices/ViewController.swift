@@ -192,6 +192,9 @@ extension ViewController: SpreadsheetViewDelegate, SpreadsheetViewDataSource  {
     func frozenRows(in spreadsheetView: SpreadsheetView) -> Int {
         1
     }
+    func spreadsheetView(_ spreadsheetView: SpreadsheetView, didSelectItemAt indexPath: IndexPath) {
+        
+    }
     func numberOfRows(in spreadsheetView: SpreadsheetView) -> Int {
         max(1, viewModels.count)
     }
