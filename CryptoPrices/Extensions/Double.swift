@@ -1,10 +1,3 @@
-//
-//  Double.swift
-//  CryptoPrices
-//
-//  Created by Диана Нуансенгси on 10.09.22.
-//
-
 import Foundation
 
 extension Double {
@@ -13,10 +6,6 @@ extension Double {
         formatter.usesGroupingSeparator = true
         formatter.numberStyle = .decimal
         formatter.formatterBehavior = .default
-       // formatter.currencySymbol = "$"
-//        formatter.minimumFractionDigits = 0
-//        formatter.maximumFractionDigits = 0
-        
         return formatter
     }
     func asCurrencyWithFormatter() -> String {
@@ -27,11 +16,4 @@ extension Double {
     func asNumberString() -> String {
         return String(format: "%.2f", self)
     }
-   
-//    func asCurrencyWithBTCFormatter() -> String {
-//        let number = NSNumber(value: self)
-//        let currString = currencyFormatter2.string(from: number) ?? "$0.00"
-//        return currString
-//    }
-    
 }

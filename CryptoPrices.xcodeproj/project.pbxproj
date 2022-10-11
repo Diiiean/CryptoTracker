@@ -26,11 +26,8 @@
 		04C7738528CC4B8500EB9AB7 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C7738428CC4B8500EB9AB7 /* UILabel.swift */; };
 		04C7738728CC4BF300EB9AB7 /* Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C7738628CC4BF300EB9AB7 /* Float.swift */; };
 		04C7738928CC510500EB9AB7 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C7738828CC510500EB9AB7 /* Double.swift */; };
-		04C7738C28CD392E00EB9AB7 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C7738B28CD392E00EB9AB7 /* ChartView.swift */; };
 		04C7739028CDEE8D00EB9AB7 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C7738F28CDEE8D00EB9AB7 /* String.swift */; };
 		04C7739628D3BE9B00EB9AB7 /* ChartViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C7739528D3BE9B00EB9AB7 /* ChartViewCell.swift */; };
-		04C7739C28D4998D00EB9AB7 /* ChartAPICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C7739B28D4998D00EB9AB7 /* ChartAPICaller.swift */; };
-		04C773A028D6024100EB9AB7 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C7739F28D6024100EB9AB7 /* PreviewProvider.swift */; };
 		04C773D528E43DEA00EB9AB7 /* ATHChangesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C773D428E43DEA00EB9AB7 /* ATHChangesCell.swift */; };
 		04C773D928E5827200EB9AB7 /* FavoritesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C773D828E5827200EB9AB7 /* FavoritesCell.swift */; };
 		04C773DB28E6147700EB9AB7 /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C773DA28E6147700EB9AB7 /* UIStackView.swift */; };
@@ -60,11 +57,8 @@
 		04C7738428CC4B8500EB9AB7 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		04C7738628CC4BF300EB9AB7 /* Float.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Float.swift; sourceTree = "<group>"; };
 		04C7738828CC510500EB9AB7 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
-		04C7738B28CD392E00EB9AB7 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		04C7738F28CDEE8D00EB9AB7 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		04C7739528D3BE9B00EB9AB7 /* ChartViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewCell.swift; sourceTree = "<group>"; };
-		04C7739B28D4998D00EB9AB7 /* ChartAPICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartAPICaller.swift; sourceTree = "<group>"; };
-		04C7739F28D6024100EB9AB7 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 		04C773D428E43DEA00EB9AB7 /* ATHChangesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATHChangesCell.swift; sourceTree = "<group>"; };
 		04C773D828E5827200EB9AB7 /* FavoritesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCell.swift; sourceTree = "<group>"; };
 		04C773DA28E6147700EB9AB7 /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
@@ -110,11 +104,9 @@
 				04C773DC28E81F6B00EB9AB7 /* Assets.xcassets */,
 				0499279A28C08FBE002EC5F0 /* AppDelegate.swift */,
 				0499279C28C08FBE002EC5F0 /* SceneDelegate.swift */,
-				0499279E28C08FBE002EC5F0 /* ViewController.swift */,
 				04C7738A28CD390B00EB9AB7 /* Views */,
 				049927E028C87129002EC5F0 /* ViewModels */,
 				049927E628C896C3002EC5F0 /* API */,
-				049927E528C88ACA002EC5F0 /* Cells */,
 				04C7738328CC4B3A00EB9AB7 /* Extensions */,
 				049927A528C08FBF002EC5F0 /* LaunchScreen.storyboard */,
 				049927A828C08FBF002EC5F0 /* Info.plist */,
@@ -153,7 +145,6 @@
 			isa = PBXGroup;
 			children = (
 				049927B028C2684D002EC5F0 /* APICaller.swift */,
-				04C7739B28D4998D00EB9AB7 /* ChartAPICaller.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -174,8 +165,8 @@
 		04C7738A28CD390B00EB9AB7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				04C7738B28CD392E00EB9AB7 /* ChartView.swift */,
-				04C7739F28D6024100EB9AB7 /* PreviewProvider.swift */,
+				049927E528C88ACA002EC5F0 /* Cells */,
+				0499279E28C08FBE002EC5F0 /* ViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -317,16 +308,13 @@
 				049927D728C3E93E002EC5F0 /* CryptoNameCell.swift in Sources */,
 				049927E428C871A0002EC5F0 /* CellViewModel.swift in Sources */,
 				04C773D928E5827200EB9AB7 /* FavoritesCell.swift in Sources */,
-				04C773A028D6024100EB9AB7 /* PreviewProvider.swift in Sources */,
 				0499279B28C08FBE002EC5F0 /* AppDelegate.swift in Sources */,
-				04C7739C28D4998D00EB9AB7 /* ChartAPICaller.swift in Sources */,
 				049927AF28C1F8BE002EC5F0 /* ColumnHeaderCell.swift in Sources */,
 				04C7739628D3BE9B00EB9AB7 /* ChartViewCell.swift in Sources */,
 				04C7738528CC4B8500EB9AB7 /* UILabel.swift in Sources */,
 				049927EC28CA8713002EC5F0 /* CirculatingSupplyCell.swift in Sources */,
 				049927D928C3EC0E002EC5F0 /* CryptoPriceCell.swift in Sources */,
 				049927DF28C6432F002EC5F0 /* UIImageView.swift in Sources */,
-				04C7738C28CD392E00EB9AB7 /* ChartView.swift in Sources */,
 				049927DB28C3EC9A002EC5F0 /* MarketCapCell.swift in Sources */,
 				04C7738728CC4BF300EB9AB7 /* Float.swift in Sources */,
 				049927D328C3AC22002EC5F0 /* CoinModel.swift in Sources */,

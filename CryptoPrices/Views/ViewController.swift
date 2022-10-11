@@ -179,6 +179,7 @@ extension ViewController: SpreadsheetViewDelegate, SpreadsheetViewDataSource  {
         }
         return nil
     }
+    //Scroll to the top 
     func spreadsheetView(_ spreadsheetView: SpreadsheetView, didSelectItemAt indexPath: IndexPath) {
         self.scrollToTop()
     }

@@ -1,10 +1,3 @@
-//
-//  Float.swift
-//  CryptoPrices
-//
-//  Created by Диана Нуансенгси on 10.09.22.
-//
-
 import Foundation
 
 extension Float {
@@ -26,19 +19,16 @@ extension Float {
         formatter.minimumFractionDigits = 2
         formatter.maximumFractionDigits = 3
         return formatter
-        
     }
-    
     func asPctChangesWithFormatter() -> String {
         let number = NSNumber(value: self)
         let pctString = pctChangesFormatter.string(from: number) ?? "0.00 %"
         return pctString
     }
-    
     func asCurrencyWithFormatter() -> String {
         let number = NSNumber(value: self)
         return numberFormatter.string(from: number) ?? "$0.00"
     }
-
+    
 }
 

@@ -1,10 +1,3 @@
-//
-//  CryptoNameCell.swift
-//  CryptoPrices
-//
-//  Created by Диана Нуансенгси on 3.09.22.
-//
-
 import Foundation
 import SpreadsheetView
 import TinyConstraints
@@ -12,16 +5,11 @@ import SDWebImage
 import UIKit
 
 final class CryptoNameCell: Cell {
-    
     static let identifier = "CryptoNameCell"
     let placeHolderImage = UIImage(named: "placeHolderImage")
     private let iconImageView: UIImageView = {
         let imageView = UIImageView()
-        
-//        imageView.image = image
-//        imageView.backgroundColor = .green
-        imageView.contentMode = .scaleAspectFit //scaleToFill //
-        //imageView.setContentHuggingPriority(.defaultLow - 1, for: .vertical)
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     private var cryptoNameLabel: UILabel = {
@@ -30,8 +18,6 @@ final class CryptoNameCell: Cell {
         label.contentMode = .scaleToFill
         label.sizeToFit()
         label.adjustsFontSizeToFitWidth = true
-//        label.setContentHuggingPriority(.defaultLow - 1, for: .vertical)
-//        label.setContentHuggingPriority(.defaultLow - 1, for: .horizontal)
         label.font = UIFont.boldSystemFont(ofSize: 16)
         label.textAlignment = .left
         return label
@@ -76,17 +62,17 @@ final class CryptoNameCell: Cell {
                                             left: 5,
                                             bottom: 0,
                                             right: -13),
-                            size: .init(width: 35, height: 35)
-            )
+                             size: .init(width: 35, height: 35)
+        )
         stackView.anchor(top: contentView.topAnchor,
-                                         leading: iconImageView.trailingAnchor,
+                         leading: iconImageView.trailingAnchor,
                          bottom: contentView.bottomAnchor,
-                                         trailing: contentView.trailingAnchor,
+                         trailing: contentView.trailingAnchor,
                          padding: .init(top: 2,
                                         left: 0,
                                         bottom: -2,
                                         right: -2)
-                  )
+        )
     }
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -97,38 +83,19 @@ final class CryptoNameCell: Cell {
     
     func configure(with viewModel: CryptoTableViewCellViewModel) {
         [stackView, iconImageView].forEach { contentView.addSubview($0) }
-        
         cryptoNameLabel.text = viewModel.name
         symbolLabel.text = viewModel.symbol
-
         if let url = URL(string: viewModel.icon) {
             iconImageView.sd_setImage(with: url, placeholderImage: nil, options: [.refreshCached], completed: { [weak self] downloadedImage, downloadException, cacheType, downloadURL in
                 if let downloadException = downloadException {
-                    
                     print("Error downloading iconImage: \(downloadException.localizedDescription)")
                 }
                 else {
                     self?.iconImageView.image = downloadedImage
-                } 
+                }
             })
         }
-        
-        
-        }
-            
-//            iconImageView.sd_setImage(with: url, placeholderImage: placeHolderImage, options: .highPriority, completed: { [weak self] downloadedImage, downloadException, cacheType, downloadURL in
-//                                if let downloadException = downloadException {
-//                                    self?.iconImageView.image = self?.placeHolderImage
-//                                    print("Error downloading iconImage: \(downloadException.localizedDescription)")
-//                                } else {
-//                                    self?.iconImageView.image = self?.placeHolderImage
-//                                    print("Successfully downloaded image: \(String(describing: downloadURL?.absoluteString))")
-//                                }
-//
-//            })
-        
-    
-    
+    }
 }
 
 

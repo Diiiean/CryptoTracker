@@ -1,10 +1,3 @@
-//
-//  Extension.swift
-//  CryptoPrices
-//
-//  Created by Диана Нуансенгси on 5.09.22.
-//
-
 import Foundation
 import SpreadsheetView
 

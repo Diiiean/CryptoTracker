@@ -1,25 +1,4 @@
-//
-//  Models.swift
-//  CryptoPrices
-//
-//  Created by Диана Нуансенгси on 3.09.22.
-//
-
 import Foundation
-
-//struct SpreadSheetConstants {
-//    enum Headers: String {
-//        case name = "Name",
-//             marketCap = "Market Cap",
-//             price = "Price",
-//             volume = "Volume (24h)",
-//             circulatingSupply = "Circulating Supply",
-//             last7days = "Last 7 Days",
-//             change24h = "Change (24h)"
-//    }
-//
-//}
-
 // MARK: - Crypto
 struct Crypto: Codable, Identifiable {
     let id: String
@@ -34,8 +13,6 @@ struct Crypto: Codable, Identifiable {
     let circulatingSupply: Double?
     let athChangePrct: Float?
     let sparklineIn7D: SparklineIn7D?
-    
-    //let sparklineIn7D: SparklineIn7D?
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -50,13 +27,8 @@ struct Crypto: Codable, Identifiable {
         case sevenDay = "price_change_percentage_7d_in_currency"
         case athChangePrct = "ath_change_percentage"
         case sparklineIn7D = "sparkline_in_7d"
-        
-        
     }
 }
-
-
-
 // MARK: - SparklineIn7D
 struct SparklineIn7D: Codable {
     let price: [Double]?
