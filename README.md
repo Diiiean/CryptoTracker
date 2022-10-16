@@ -17,7 +17,7 @@ https://user-images.githubusercontent.com/86627602/195193333-dff38d27-18ef-41c4-
 
 ## Technical applications
 - UIKit
-- MVVM(Model-View-ViewModel) structural pattern
+- MVС structural pattern
 - Codable type
 - Networking Layer
 ## Usage
